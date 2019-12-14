@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 RUN apt-get -y update
 
-RUN apt-get install -y nodejs
+RUN apt-get install -y node.js
 
 RUN apt-get install -y npm
 
