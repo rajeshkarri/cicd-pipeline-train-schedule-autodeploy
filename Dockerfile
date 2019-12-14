@@ -1,8 +1,18 @@
-FROM node:10
+FROM ubuntu:latest
+
+MAINTAINER ybmsr <ybmadhu404@gmail.com>
+
 WORKDIR /usr/src/app
+
+RUN apt-get -y update
+
+RUN apt-get install -y nodejs
+
+RUN apt-get install -y npm
+
 COPY package*.json ./
-RUN yum install npm -y
-RUN npm install
+
+RUN npm install 
 COPY . .
 EXPOSE 8080
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]
